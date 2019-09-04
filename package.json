@@ -1,28 +1,25 @@
 {
-  "name": "electron-discovery-enviornment-project",
+  "name": "electron-discovery-environment-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.ts",
-  "dependencies": {
-    "bootstrap": "4.3.1"
-  },
-  "devDependencies": {
-    "@types/jquery": "^3.3.31",
-    "electron": "6.0.7",
-    "typescript": "3.6.2"
-  },
+  "description": "A minimal Electron application written with Typescript",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cole-tucker/electron-discovery-enviornment-project.git"
+  "repository": "https://github.com/cole-tucker/electron-discovery-enviornment-project.git",
+  "author": "cole-tucker",
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
   },
-  "author": "Cole Tucker",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/cole-tucker/electron-discovery-enviornment-project/issues"
   },
-  "homepage": "https://github.com/cole-tucker/electron-discovery-enviornment-project#readme"
+  "homepage": "https://github.com/cole-tucker/electron-discovery-enviornment-project#readme",
+  "main": "main.js",
+  "dependencies": {},
+  "license": "ISC"
 }
