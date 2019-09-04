@@ -1,0 +1,26 @@
+{
+  "name": "electron-discovery-enviornment-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jquery": "^3.3.31",
+    "electron": "6.0.7",
+    "typescript": "3.6.2"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cole-tucker/electron-discovery-enviornment-project.git"
+  },
+  "author": "Cole Tucker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cole-tucker/electron-discovery-enviornment-project/issues"
+  },
+  "homepage": "https://github.com/cole-tucker/electron-discovery-enviornment-project#readme"
+}
