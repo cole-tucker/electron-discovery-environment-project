@@ -1,7 +1,17 @@
 import {app, BrowserWindow} from 'electron';
-let win = null
+import * as path from "path";
+
+let mainWindow: Electron.BrowserWindow
 
 app.on('ready', () => {
-    win = new BrowserWindow()
-    win.setBounds({x: 0, y: 0, width: 800, height: 600})
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+    });
+
+    mainWindow.loadFile(path.join(__dirname, "../index.html"));
+
+    mainWindow.on('closed', () => {
+        mainWindow = null;
+    })
 })
