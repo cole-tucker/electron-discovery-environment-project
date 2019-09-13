@@ -10,10 +10,21 @@
     <script>require('bootstrap');</script>
 
   </head>
-  <body>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-      Login
-    </button>
+  <body><nav class="navbar navbar-expand-sm bg-light">
+
+    <!-- Links -->
+    <ul class="navbar-nav" style="display: inline-block">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Browse Apps</a>
+          </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+          Login
+        </button>
+      </li>
+    </ul>
+  
+  </nav>
     
     <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -36,7 +47,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary center">Save changes</button>
+            <button type="button" id="saveBtn" class="btn btn-primary center">Save changes</button>
           </div>
         </div>
       </div>
