@@ -21,13 +21,10 @@
   "homepage": "https://github.com/cole-tucker/electron-discovery-enviornment-project#readme",
   "main": "main.js",
   "dependencies": {
-    "@types/node": "^12.7.5",
-    "@types/request": "^2.48.3",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "request": "^2.88.0"
   },
   "license": "ISC"
 }
