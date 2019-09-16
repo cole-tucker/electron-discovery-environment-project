@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Electron Example</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <script>let $ = require('jquery');</script>
-    <script>require('popper.js');</script>
-    <script>require('bootstrap');</script>
 
-  </head>
-  <body><nav class="navbar navbar-expand-sm bg-light">
+<head>
+  <meta charset="UTF-8">
+  <title>Electron Example</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>let $ = require('jquery');</script>
+  <script>require('popper.js');</script>
+  <script>require('bootstrap');</script>
+</head>
 
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
     <!-- Links -->
     <ul class="navbar-nav" style="display: inline-block">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Browse Apps</a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Browse Apps</a>
+      </li>
       <li class="nav-item">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
           Login
         </button>
       </li>
     </ul>
-  
   </nav>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
+  <!-- Browse Apps Page -->
+  <div class="browse-apps">
+    <h1>Browse Apps</h1>
+
+    <table id="browseAppsTable">
+      <tr></tr>
+    </table>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
           </div>
-          <div class="modal-body">
-            <div>
-              <label for="username">Username</label>
-              <input type="text" name="username" id="username">
-            </div>
-            <div>
-              <label for="password">Password</label>
-              <input type="text" name="password" id="password">
-            </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="text" name="password" id="password">
           </div>
-          <div class="modal-footer">
-            <button type="button" id="saveBtn" class="btn btn-primary center">Save changes</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="loginBtn" class="btn btn-primary center">Save changes</button>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 
-  <script>
-    // You can also require other files to run in this process
-    require('./dist/renderer.js')
-  </script>
+<script>
+  // You can also require other files to run in this process
+  require('./dist/renderer.js')
+</script>
+
 </html>
