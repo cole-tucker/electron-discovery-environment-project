@@ -8,11 +8,11 @@ var store = require('data-store')({path: process.cwd() + '/token.json'});
 
 var url = 'https://de.cyverse.org/terrain/token'
 
-$('#loginBtn').on("click", () => {
+$('#loginBtn').on('click', () => {
     var username = ( < HTMLInputElement > document.getElementById('username')).value;
     var password = ( < HTMLInputElement > document.getElementById('password')).value;
 
-    var auth = "Basic " + Buffer.from(username + ":" + password).toString("base64");
+    var auth = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
 
     const req = request({
             url: url,
@@ -26,8 +26,10 @@ $('#loginBtn').on("click", () => {
             if (jsonObject['status'] === 401) {
                 console.log(jsonObject['error'])
             } else {
-                console.log('Login Success')
                 $('#loginModal').modal('toggle');
+                $('#usernameBtn').html('<i class="fa fa-user"></i> ' + username);
+                $('#loginNav').hide();
+                $('#loggedInUser').show();
             }
         }
     )
