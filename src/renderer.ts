@@ -30,6 +30,23 @@ $('#loginBtn').on('click', () => {
                 $('#usernameBtn').html('<i class="fa fa-user"></i> ' + username);
                 $('#loginNav').hide();
                 $('#loggedInUser').show();
+
+                // lets  list apps... also a better way of using requests
+                // const request = require('request');
+                var query_params = "DE Word Count";
+                var query_encoded = encodeURIComponent(query_params)
+                const options = {
+                    url: 'https://de.cyverse.org/terrain/apps?search='+query_encoded,
+                    headers: {
+                        "Authorization": "Bearer " + store.get('token')
+                    }
+                }
+
+                request(options, function(err: any, res: any, body: any){
+                    console.log(body);
+                });
+
+                // console.log(options)
             }
         }
     )

@@ -1,7 +1,7 @@
 {
   "name": "electron-discovery-environment-project",
   "version": "1.0.0",
-  "description": "A minimal Electron application written with Typescript",
+  "description": "An example for the CyVerse Discovery Environment in Electron.",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
