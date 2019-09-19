@@ -8,7 +8,7 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "start": "npm run build && electron ./dist/main.js"
   },
-  "repository": "https://github.com/cole-tucker/electron-discovery-enviornment-project.git",
+  "repository": "https://github.com/cole-tucker/electron-discovery-environment-project.git",
   "author": "cole-tucker",
   "devDependencies": {
     "electron": "^2.0.18",
@@ -16,9 +16,9 @@
     "typescript": "^2.9.2"
   },
   "bugs": {
-    "url": "https://github.com/cole-tucker/electron-discovery-enviornment-project/issues"
+    "url": "https://github.com/cole-tucker/electron-discovery-environment-project/issues"
   },
-  "homepage": "https://github.com/cole-tucker/electron-discovery-enviornment-project#readme",
+  "homepage": "https://github.com/cole-tucker/electron-discovery-environment-project#readme",
   "main": "main.js",
   "dependencies": {
     "bootstrap": "^4.3.1",
