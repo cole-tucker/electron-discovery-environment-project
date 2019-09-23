@@ -30,29 +30,32 @@ $('#loginBtn').on('click', () => {
                 $('#usernameBtn').html('<i class="fa fa-user"></i> ' + username);
                 $('#loginNav').hide();
                 $('#loggedInUser').show();
-
-                // lets list apps... also a better way of using requests
-                var query_params = "DE Word Count";
-                var query_encoded = encodeURIComponent(query_params)
-                const options = {
-                    url: 'https://de.cyverse.org/terrain/apps?search='+query_encoded,
-                    headers: {
-                        "Authorization": "Bearer " + store.get('token')
-                    }
-                }
-
-                // Takes a few seconds to open
-                request(options, function(err: any, res: any, body: any){
-                    var appsJson = JSON.parse(body);
-
-                    for (let i = 0; i < appsJson['apps'].length; i++) {
-                        const app = appsJson['apps'][i];
-                        if (app['name'] == query_params) {
-                            console.log('Made it!')
-                        }
-                    }
-                });
             }
         }
     )
 })
+
+$('#searchBtn').on('click', () => {
+    console.log(store.get('token'));
+    // lets list apps... also a better way of using requests
+    var query_params = ( < HTMLInputElement > document.getElementById('search-input')).value;
+    var query_encoded = encodeURIComponent(query_params)
+    const options = {
+        url: 'https://de.cyverse.org/terrain/apps?search='+query_encoded,
+        headers: {
+            "Authorization": "Bearer " + store.get('token')
+        }
+    }
+
+    // Takes a few seconds to open
+    request(options, function(err: any, res: any, body: any){
+        var appsJson = JSON.parse(body);
+
+        for (let i = 0; i < appsJson['apps'].length; i++) {
+            const app = appsJson['apps'][i];
+            if (app['name'] == query_params) {
+                console.log('Made it!')
+            }
+        }
+    })
+});
