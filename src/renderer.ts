@@ -31,8 +31,7 @@ $('#loginBtn').on('click', () => {
                 $('#loginNav').hide();
                 $('#loggedInUser').show();
 
-                // lets  list apps... also a better way of using requests
-                // const request = require('request');
+                // lets list apps... also a better way of using requests
                 var query_params = "DE Word Count";
                 var query_encoded = encodeURIComponent(query_params)
                 const options = {
@@ -42,11 +41,17 @@ $('#loginBtn').on('click', () => {
                     }
                 }
 
+                // Takes a few seconds to open
                 request(options, function(err: any, res: any, body: any){
-                    console.log(body);
-                });
+                    var appsJson = JSON.parse(body);
 
-                // console.log(options)
+                    for (let i = 0; i < appsJson['apps'].length; i++) {
+                        const app = appsJson['apps'][i];
+                        if (app['name'] == query_params) {
+                            console.log('Made it!')
+                        }
+                    }
+                });
             }
         }
     )
