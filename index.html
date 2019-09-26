@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Electron Example</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script>let $ = require('jquery');</script>
+    <script>require('jquery')</script>
     <script>require('popper.js');</script>
     <script>require('bootstrap');</script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"type='text/css'>
@@ -16,10 +16,10 @@
     <a class="navbar-brand" href="#">Home</a>
     <a class="navbar-brand" href="#">Files</a>
     <a class="navbar-brand" href="#">Apps</a>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0"> -->
       <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" id="searchBtn" type="submit">Search</button>
-    </form>
+      <button class="btn btn-outline-success my-2 my-sm-0" id="searchBtn">Search</button>
+    <!-- </form> -->
     <button class="btn btn-light border" id="loginNav" type="button" data-toggle="modal" data-target="#loginModal">
       <span class="button">Sign In</span>
       </button>
