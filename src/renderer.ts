@@ -36,7 +36,6 @@ $('#loginBtn').on('click', () => {
 })
 
 $('#searchBtn').on('click', () => {
-    console.log(store.get('token'));
     // lets list apps... also a better way of using requests
     var query_params = ( < HTMLInputElement > document.getElementById('search-input')).value;
     var query_encoded = encodeURIComponent(query_params)
@@ -54,7 +53,7 @@ $('#searchBtn').on('click', () => {
         for (let i = 0; i < appsJson['apps'].length; i++) {
             const app = appsJson['apps'][i];
             if (app['name'] == query_params) {
-                console.log('Made it!')
+                console.log(app['name'])
             }
         }
     })
