@@ -13,15 +13,25 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Home</a>
-    <a class="navbar-brand" href="#">Files</a>
-    <a class="navbar-brand" href="#">Apps</a>
-    <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" id="searchBtn">Search</button>
-    <button class="btn btn-light border" id="loginNav" type="button" data-toggle="modal" data-target="#loginModal">
+    <a class="navbar-brand col-1" href="#">Home</a>
+    <a class="navbar-brand col-1" href="#">Files</a>
+    <a class="navbar-brand col-1" href="#">Apps</a>
+    <!-- <div class="col-6">
+      <input class="form-control col-10" id="search-input" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success col-2" id="searchBtn"><i class="fa fa-search"></i></button>
+    </div> -->
+    <div class="input-group col-6">
+      <input type="text" class="form-control" id="search-input" type="search" placeholder="Search" aria-label="Search">
+      <div class="input-group-append">
+        <button class="btn btn-primary" id="searchBtn" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <button class="btn btn-light border col-2" id="loginNav" type="button" data-toggle="modal" data-target="#loginModal">
       <span class="button">Sign In</span>
     </button>
-    <button class="btn btn-light border collapse" id="loggedInUser" type="button" style="display: none">
+    <button class="btn btn-light border collapse col-4" id="loggedInUser" type="button" style="display: none">
       <span class="button" id="usernameBtn"></span>
     </button>
   </nav>
@@ -55,6 +65,23 @@
 
   <div class="mt-2" id="browse-apps" style="display: none"></div>
 </body>
+
+<style>
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}</style>
 
 <script>
   // You can also require other files to run in this process
