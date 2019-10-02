@@ -36,7 +36,7 @@ $('#loginBtn').on('click', () => {
 })
 
 $('#searchBtn').on('click', () => {
-    // lets list apps... also a better way of using requests
+    $('#browse-apps').empty()
     var query_params = ( < HTMLInputElement > document.getElementById('search-input')).value;
     var query_encoded = encodeURIComponent(query_params)
     const options = {
@@ -50,11 +50,18 @@ $('#searchBtn').on('click', () => {
     request(options, function(err: any, res: any, body: any){
         var appsJson = JSON.parse(body);
 
+        $('#browse-apps').append('<h2>App Search Results</h2>')
         for (let i = 0; i < appsJson['apps'].length; i++) {
             const app = appsJson['apps'][i];
-            if (app['name'] == query_params) {
-                console.log(app['name'])
+            if (app['name'].includes(query_params)) {
+                $('#browse-apps').append('<div class="col-1">')
+                $('#browse-apps').append('<div class="card border col-5 mt-1" id="app-card-'+ i + '">')
+                $('#app-card-'+ i).append('<div class="card-body" id="app-card-body-' + i +'">')
+                $('#app-card-body-' + i).append('<h4 class="card-title">' + app['name'] + '</h4>')
+                $('#app-card-body-' + i).append('<p class="card-text">' + app['description'] + '</p>')
+                $('#app-card-body-' + i).append('<button type="button" class="btn btn-primary center">Select</button>')
             }
         }
+        $('#browse-apps').show()
     })
 });
