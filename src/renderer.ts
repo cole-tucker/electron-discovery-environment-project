@@ -55,12 +55,11 @@ $('#searchBtn').on('click', () => {
             for (let i = 0; i < appsJson['apps'].length; i++) {
                 const app = appsJson['apps'][i];
                 if (app['name'].includes(query_params)) {
-                    $('#browse-apps').append('<div class="col-1">')
                     $('#browse-apps').append('<div class="card border col-5 mt-1" id="app-card-'+ i + '">')
                     $('#app-card-'+ i).append('<div class="card-body" id="app-card-body-' + i +'">')
                     $('#app-card-body-' + i).append('<h4 class="card-title">' + app['name'] + '</h4>')
                     $('#app-card-body-' + i).append('<p class="card-text">' + app['description'] + '</p>')
-                    $('#app-card-body-' + i).append('<button type="button" class="btn btn-primary center">Select</button>')
+                    $('#app-card-body-' + i).append('<button type="button" class="btn btn-primary center showApp" id="app-select-' + i + '">Select</button>')
                 }
             }
             $('#browse-apps').show()
