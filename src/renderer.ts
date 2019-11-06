@@ -50,7 +50,6 @@ $('#searchBtn').on('click', () => {
         $('#browse-apps').empty()
         request(options, function(err: any, res: any, body: any){
             var appsJson = JSON.parse(body);
-            console.log(body)
     
             $('#browse-apps').append('<h2>App Search Results</h2>')
             for (let i = 0; i < appsJson['apps'].length; i++) {
@@ -65,10 +64,6 @@ $('#searchBtn').on('click', () => {
                 }
             }
             $('#browse-apps').show()
-
-            $('.showApp').on('click', () => {
-                console.log()
-            })
         })
     }
 });
@@ -79,6 +74,12 @@ $(document).on("click", ".viewapp",
         var system_id:String = $(elem).data('system')
         var id:String = $(elem).data('id')
         applyAppTemplate(elem)
+    }
+);
+
+$(document).on("click", "#submit-app",
+    function (event:any) {
+        $('#show-app').empty()
     }
 );
 
